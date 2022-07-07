@@ -16,6 +16,14 @@ This project uses the following development tools:
 
 - [Vitest](https://vitest.dev/): Drop in alternative to [Jest](https://jestjs.io/) that runs with Vite.
 
+## Code Examples
+
+Below are several code examples for testing and stories:
+
+- [Sample Ladle Story](/src/stories/TodoInput.stories.tsx)
+
+- [Sample Vitest Test File](/src/__tests__/TodoInput.test.tsx)
+
 ## Getting Started
 
 To run this project, you should first make sure that you have NodeJS installed, then install PNPM via NPM:
@@ -39,7 +47,7 @@ pnpm run dev
 
 ## Running Ladle
 
-Ladle is an alterative to Storybook that supports [CSF (Component Story Format)](). To run Ladle, make sure you have followed [Getting Started](#getting-started). From there, start or build ladle.
+Ladle is an alterative to Storybook that supports [CSF (Component Story Format)](https://storybook.js.org/docs/react/api/csf). To run Ladle, make sure you have followed [Getting Started](#getting-started). From there, start or build ladle.
 
 ```bash
 # Will start ladle
