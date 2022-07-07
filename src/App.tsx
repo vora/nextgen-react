@@ -13,25 +13,34 @@ const App = () => {
     }
   };
 
+  const renderList = () => {
+    if (Object.keys(state).length === 0) {
+      return <p className="text-lg text-center">No TODOs Yet</p>;
+    }
+    return (
+      <>
+        {Object.keys(state).map((todoKey) => {
+          const todo = state[todoKey];
+          return (
+            <div className="py-1" key={todoKey}>
+              <TodoItem
+                text={todo.title}
+                checked={todo.completed}
+                onDelete={() => remove(todoKey)}
+                onClick={() => handleItemClick(todoKey)}
+              />
+            </div>
+          );
+        })}
+      </>
+    );
+  };
+
   return (
     <div className="mt-24">
       <TodoLayout>
         <TodoInput onAdd={add} />
-        <div className="py-4 px-2">
-          {Object.keys(state).map((todoKey) => {
-            const todo = state[todoKey];
-            return (
-              <div className="py-1" key={todoKey}>
-                <TodoItem
-                  text={todo.title}
-                  checked={todo.completed}
-                  onDelete={() => remove(todoKey)}
-                  onClick={() => handleItemClick(todoKey)}
-                />
-              </div>
-            );
-          })}
-        </div>
+        <div className="py-4 px-2">{renderList()}</div>
       </TodoLayout>
     </div>
   );
