@@ -8,7 +8,8 @@
     "build": "vite build",
     "test": "vitest run",
     "ladle": "ladle serve",
-    "ladle-build": "ladle build --stories=src/stories/**/*.stories.tsx"
+    "ladle-build": "ladle build --stories=src/stories/**/*.stories.tsx",
+    "serve": "vite preview --port 9090"
   },
   "keywords": [],
   "author": "",
