@@ -5,9 +5,19 @@ export default {
 };
 
 export const UncheckedItem = () => (
-  <Component checked={false} text="TODO Item #1" onClick={() => null} />
+  <Component
+    onDelete={() => null}
+    checked={false}
+    text="TODO Item #1"
+    onClick={() => null}
+  />
 );
 
 export const CheckedItem = () => (
-  <Component checked={true} text="TODO Item #2" onClick={() => null} />
+  <Component
+    onDelete={() => null}
+    checked={true}
+    text="TODO Item #2"
+    onClick={() => null}
+  />
 );

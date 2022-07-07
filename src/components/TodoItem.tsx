@@ -29,10 +29,16 @@ const CheckedIcon = () => (
 interface Props {
   checked: boolean;
   onClick: () => void;
+  onDelete: () => void;
   text: string;
 }
 
-export const TodoItem: React.FC<Props> = ({ checked, onClick, text }) => {
+export const TodoItem: React.FC<Props> = ({
+  checked,
+  onClick,
+  onDelete,
+  text,
+}) => {
   const textClasses = clsx(
     "text-lg",
     "font-medium",
@@ -43,8 +49,16 @@ export const TodoItem: React.FC<Props> = ({ checked, onClick, text }) => {
   return (
     <div className="flex flex-row items-center justify-between">
       <p className={textClasses}>{text}</p>
-      <div>
-        <button onClick={onClick}>
+      <div className="flex flex-row items-center">
+        {checked && (
+          <button
+            onClick={onDelete}
+            className="text-xs text-red-700 border p-1 rounded"
+          >
+            Delete
+          </button>
+        )}
+        <button onClick={onClick} className="ml-2">
           {checked ? <CheckedIcon /> : <UncheckedIcon />}
         </button>
       </div>

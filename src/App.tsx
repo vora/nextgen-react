@@ -25,6 +25,7 @@ const App = () => {
                 <TodoItem
                   text={todo.title}
                   checked={todo.completed}
+                  onDelete={() => remove(todoKey)}
                   onClick={() => handleItemClick(todoKey)}
                 />
               </div>
