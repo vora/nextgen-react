@@ -24,7 +24,6 @@ export const TodoInput: React.FC<Props> = ({ onAdd }) => {
 
   return (
     <div className="flex flex-col">
-      <label className="text-sm font-bold">Add a TODO</label>
       <div className="flex flex-row">
         <input
           value={value}

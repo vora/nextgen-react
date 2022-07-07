@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 const UncheckedIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -31,9 +33,16 @@ interface Props {
 }
 
 export const TodoItem: React.FC<Props> = ({ checked, onClick, text }) => {
+  const textClasses = clsx(
+    "text-lg",
+    "font-medium",
+    checked && "line-through",
+    checked ? "text-gray-500" : "text-gray-800"
+  );
+
   return (
     <div className="flex flex-row items-center justify-between">
-      <p className="text-lg font-medium">{text}</p>
+      <p className={textClasses}>{text}</p>
       <div>
         <button onClick={onClick}>
           {checked ? <CheckedIcon /> : <UncheckedIcon />}

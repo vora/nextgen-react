@@ -18,11 +18,14 @@ export const useTodo = () => {
     {}
   );
 
-  const addTodo = (todo: TodoItem) => {
+  const addTodo = (todo: string) => {
     const todoId = uuidv4();
     setTodoState((prevState) => ({
       ...prevState,
-      [todoId]: todo,
+      [todoId]: {
+        title: todo,
+        completed: false,
+      },
     }));
   };
 
