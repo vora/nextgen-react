@@ -36,7 +36,7 @@ From there clone the repository, install dependencies and then run the project.
 
 ```bash
 # Clone the respository
-git clone <REPO_URL>
+git clone git@github.com:vora/nextgen-react.git
 
 # Install dependencies
 pnpm install
